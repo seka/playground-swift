@@ -29,6 +29,11 @@ install-brew: ## brew で管理するツールを導入します。
 	brew list mint &>/dev/null || brew install mint
 	brew link --force mint
 
+.PHONY: exec-xcodegen
+exec-xcodegen: ## xcodegen　を使って xcodeproj ファイルを作成します
+	$(eval CMD := "${MINT_LINK_PATH}/xcodegen")
+	@$(CMD) generate
+
 .PHONY: exec-swiftformat
 exec-swiftformat: ## swiftformat を実行します。
 	$(eval SWIFT_VERSION := $(shell swift --version | tr ' ' '\n' | head -n 4 | tail -n 1))
