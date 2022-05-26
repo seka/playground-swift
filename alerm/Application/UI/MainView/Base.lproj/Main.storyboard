@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,29 +18,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, Wold!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWe-Ic-aju">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScV-z6-YLq">
+                                <rect key="frame" x="40" y="84" width="334" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-71-8bm">
+                                <rect key="frame" x="40" y="160" width="334" height="216"/>
+                                <locale key="locale" localeIdentifier="ja"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eit-0Z-lCs">
+                                <rect key="frame" x="40" y="772.5" width="334" height="49.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Setting">
+                                            <attributes>
+                                                <font key="NSFont" size="32" name=".SFNS-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eWe-Ic-aju" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dAI-1H-B2d"/>
-                            <constraint firstItem="eWe-Ic-aju" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dxx-JW-2VG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eWe-Ic-aju" secondAttribute="bottom" id="lbo-rV-0On"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eWe-Ic-aju" secondAttribute="trailing" id="wQO-K9-zRd"/>
+                            <constraint firstItem="Eit-0Z-lCs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-40" id="5oe-gP-vTa"/>
+                            <constraint firstItem="Eit-0Z-lCs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-40" id="5qo-O5-SBQ"/>
+                            <constraint firstItem="V2G-71-8bm" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Eit-0Z-lCs" secondAttribute="top" constant="-40" id="C2U-rX-tQa"/>
+                            <constraint firstItem="V2G-71-8bm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-40" id="CI0-D4-PIy"/>
+                            <constraint firstItem="ScV-z6-YLq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="D1s-W3-Xdw"/>
+                            <constraint firstItem="V2G-71-8bm" firstAttribute="top" secondItem="ScV-z6-YLq" secondAttribute="bottom" constant="40" id="KAD-k4-cNi"/>
+                            <constraint firstItem="ScV-z6-YLq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="PvD-Uf-XxT"/>
+                            <constraint firstItem="V2G-71-8bm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="W85-Ss-X8b"/>
+                            <constraint firstItem="ScV-z6-YLq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-40" id="Zkn-vH-S5O"/>
+                            <constraint firstItem="Eit-0Z-lCs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="dXP-8L-Edv"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="80"/>
+            <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
