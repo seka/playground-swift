@@ -40,6 +40,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onTapSettingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6nF-eo-SHF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -58,7 +61,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="Eit-0Z-lCs" id="PnK-rv-Zpf"/>
                         <outlet property="label" destination="ScV-z6-YLq" id="IXi-Ns-9LG"/>
                         <outlet property="picker" destination="V2G-71-8bm" id="jvr-bT-HaG"/>
                     </connections>

@@ -12,11 +12,21 @@ final class ViewController: UIViewController {
     
     @IBOutlet private var picker: UIDatePicker!
     
-    @IBOutlet private var button: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+
+    @IBAction private func onTapSettingButton(_ sender: UIButton) {
+        let formatter: DateFormatter = {
+            let f = DateFormatter()
+            f.dateFormat = "yyyy-MM-dd HH:mm"
+            f.calendar = Calendar(identifier: .gregorian)
+            f.locale = Locale(identifier: "en_US_POSIX")
+            return f
+        }()
+        let strDate = formatter.string(from: picker.date)
+        label.text = strDate
     }
 }
 
