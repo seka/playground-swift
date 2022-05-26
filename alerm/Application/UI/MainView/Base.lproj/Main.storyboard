@@ -57,6 +57,11 @@
                             <constraint firstItem="Eit-0Z-lCs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="dXP-8L-Edv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="Eit-0Z-lCs" id="PnK-rv-Zpf"/>
+                        <outlet property="label" destination="ScV-z6-YLq" id="IXi-Ns-9LG"/>
+                        <outlet property="picker" destination="V2G-71-8bm" id="jvr-bT-HaG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
