@@ -1,0 +1,146 @@
+name: Alerm
+configs:
+  Debug: debug
+  Release: release
+options:
+  xcodeVersion: 13.2.1
+  deploymentTarget:
+    iOS: 14.0
+  defaultConfig: Debug
+  groupSortPosition: top
+  transitivelyLinkDependencies: false
+settings:
+  configs:
+    Debug:
+      CLANG_CXX_LANGUAGE_STANDARD: gnu++17
+      MTL_ENABLE_DEBUG_INFO: INCLUDE_SOURCE
+      MTL_FAST_MATH: 'YES'
+      SDKROOT: iphoneos
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      SWIFT_OPTIMIZATION_LEVEL: -Onone
+    Release:
+      CLANG_CXX_LANGUAGE_STANDARD: gnu++17
+      MTL_FAST_MATH: 'YES'
+      SDKROOT: iphoneos
+      SWIFT_COMPILATION_MODE: wholemodule
+      SWIFT_OPTIMIZATION_LEVEL: -O
+schemes:
+  Debug:
+    build:
+      targets:
+        Alerm: all
+        Test: [test]
+        UITest: [test]
+    test:
+      targets:
+        - Test
+        - UITest
+      gatherCoverageData: true
+  Release:
+    build:
+      targets:
+        Alerm: all
+targets:
+  Alerm:
+    type: application
+    platform: iOS
+    settings:
+      configs:
+        Debug:
+          ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: SupportFile/Alerm/Info.plist
+          INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: 'YES'
+          INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
+          INFOPLIST_KEY_UIMainStoryboardFile: Main
+          INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait
+            UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft
+            UIInterfaceOrientationLandscapeRight
+          INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+            UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: github.com.seka.playgroundswift.Alerm.debug
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+        Release:
+          ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: SupportFile/Alerm/Info.plist
+          INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: 'YES'
+          INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
+          INFOPLIST_KEY_UIMainStoryboardFile: Main
+          INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait
+            UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft
+            UIInterfaceOrientationLandscapeRight
+          INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+            UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: github.com.seka.playgroundswift.Alerm
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+    sources:
+      - Application
+  Test:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: Alerm
+    settings:
+      configs:
+        Debug:
+          ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: 'YES'
+          BUNDLE_LOADER: $(TEST_HOST)
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          IPHONEOS_DEPLOYMENT_TARGET: '15.2'
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: github.com.seka.playgroundswift.AlermTest
+          SWIFT_EMIT_LOC_STRINGS: 'NO'
+          TEST_HOST: $(BUILT_PRODUCTS_DIR)/Alerm.app/Alerm
+        Release:
+          ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: 'YES'
+          BUNDLE_LOADER: $(TEST_HOST)
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          IPHONEOS_DEPLOYMENT_TARGET: '15.2'
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: github.com.seka.playgroundswift.AlermTest
+          SWIFT_EMIT_LOC_STRINGS: 'NO'
+          TEST_HOST: $(BUILT_PRODUCTS_DIR)/Alerm.app/Alerm
+    sources:
+      - Test
+  UITest:
+    type: bundle.ui-testing
+    platform: iOS
+    dependencies:
+      - target: Alerm
+    settings:
+      configs:
+        Debug:
+          ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: 'YES'
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: github.com.seka.playgroundswift.AlermUITest
+          SWIFT_EMIT_LOC_STRINGS: 'NO'
+          SWIFT_VERSION: '5.0'
+          TEST_TARGET_NAME: Alerm
+        Release:
+          ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: 'YES'
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: github.com.seka.playgroundswift.AlermUITest
+          SWIFT_EMIT_LOC_STRINGS: 'NO'
+          SWIFT_VERSION: '5.0'
+          TEST_TARGET_NAME: Alerm
+    sources:
+      - UITest
