@@ -1,0 +1,16 @@
+xcassets:
+  - inputs:
+      - Application/Asset/Color.xcassets
+    outputs:
+      - templateName: swift5
+        params:
+          forceProvidesNamespaces: true
+        output: Application/Asset/Generated/Image-Color+Generated.swift
+ib:
+  inputs:
+    - Application/UI
+  outputs:
+    - templateName: scenes-swift5
+      output: Application/Asset/Generated/IB-Scenes+Generated.swift
+    - templateName: segues-swift5
+      output: Application/Asset/Generated/IB-Segues+Generated.swift

@@ -1,4 +1,4 @@
-PRODUCT_NAME := alerm
+gRODUCT_NAME := alerm
 .DEFAULT_GOAL := help
 
 MINT_LIB_PATH := "./DevTool/Mint/lib"
@@ -33,6 +33,11 @@ install-brew: ## brew で管理するツールを導入します。
 exec-xcodegen: ## xcodegen　を使って xcodeproj ファイルを作成します
 	$(eval CMD := "${MINT_LINK_PATH}/xcodegen")
 	@$(CMD) generate
+
+.PHONY: exec-swiftgen
+exec-swiftgen: ## SwiftGen 6.5.0 以降を使うためのワークアラウンド。
+	$(eval CMD := "${MINT_LINK_PATH}/swiftgen")
+	@$(CMD)
 
 .PHONY: exec-swiftformat
 exec-swiftformat: ## swiftformat を実行します。
